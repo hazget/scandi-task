@@ -81,12 +81,13 @@ class Currencies extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
-    this.state.backdropHeight = document.getElementById("main").scrollHeight;
+    this.setState(state=>({scrolled:state.scrolled,backdropHeight: document.getElementById("main").scrollHeight}))
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.backdropHeight !== document.getElementById("main").scrollHeight) {
-      this.state.backdropHeight = document.getElementById("main").scrollHeight;
+      this.setState(state=>({scrolled:state.scrolled,backdropHeight: document.getElementById("main").scrollHeight}))
     }
   }
 

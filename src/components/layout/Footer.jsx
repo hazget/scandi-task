@@ -13,7 +13,7 @@ class Footer extends Component {
   render() {
     return (
       <Container>
-        &copy; Georgy Lepsaya
+        &copy; Roman Makatsaryia
       </Container>
     )
   }
