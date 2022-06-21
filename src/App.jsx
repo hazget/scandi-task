@@ -34,8 +34,7 @@ function App() {
 
   useEffect(() => {
     dispatch(calculateTotals(currency));
-  }, [cartItems]);
-  
+  }, [cartItems, currency, dispatch]);
   return (
     <ApolloProvider client={client}>
       <MainWrap />

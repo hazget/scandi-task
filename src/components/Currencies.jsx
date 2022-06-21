@@ -115,7 +115,7 @@ class Currencies extends Component {
         </Currency>
         {this.props.currenciesBackdrop.showCurrenciesBackdrop &&
           <>
-            {ReactDOM.createPortal(<Backdrop backdropHeight={this.state.backdropHeight + 230} onClick={() => this.props.dispatch(toggleCurrenciesModal())}/>, portalElement)}
+            {portalElement && ReactDOM.createPortal(<Backdrop backdropHeight={this.state.backdropHeight + 230} onClick={() => this.props.dispatch(toggleCurrenciesModal())}/>, portalElement)}
             <CurrenciesOptions togglePosition={this.state.scrolled > 70}>
               {this.currs.map(curr => {
                 const label = curr.label;

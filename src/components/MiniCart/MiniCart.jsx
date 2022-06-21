@@ -159,7 +159,7 @@ class MiniCart extends Component {
         </CartButton>
         {this.props.minicartBackdrop.showMinicartBackdrop && 
           <>
-          {ReactDOM.createPortal(<Backdrop backdropHeight={this.state.backdropHeight + 230} onClick={() => this.props.dispatch(toggleMinicartModal())}/>, portalElement)}
+          {portalElement && ReactDOM.createPortal(<Backdrop backdropHeight={this.state.backdropHeight + 230} onClick={() => this.props.dispatch(toggleMinicartModal())}/>, portalElement)}
           <ModalContainer togglePosition={this.state.scrolled > 75}>
             <MiniCartHeader><b>My Bag</b>, {this.props.cart.amount} items</MiniCartHeader>
             {this.props.cart.cartItems.map(item => {
